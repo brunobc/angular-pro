@@ -12,6 +12,11 @@ import { Store } from './store';
       <h6 mat-line>{{ todo.name }}</h6>
     </mat-list-item>
   </mat-list>
+  <div>
+    <songs-playlist></songs-playlist>
+    <songs-listened></songs-listened>
+    <songs-favourites></songs-favourites>
+  </div>
   `
 })
 export class AppComponent {
