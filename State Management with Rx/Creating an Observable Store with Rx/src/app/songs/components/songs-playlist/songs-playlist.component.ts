@@ -28,7 +28,7 @@ export class SongsPlaylistComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.playlist$ = this.store.select('playlist');
-    this.subscription = this.playlist$.subscribe();
+    this.subscription = this.songsService.getPlaylist$.subscribe();
   }
 
   ngOnDestroy() {

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/do';
 export class SongsService {
 
   getPlaylist$ = this.http
-    .get('/api/playlist')
+    .get('http://localhost:4000/playlist')
     .map(res => res.json())
     .do(next => this.store.set('playlist', next));
 
