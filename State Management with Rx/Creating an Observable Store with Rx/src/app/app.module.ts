@@ -7,7 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import {Store} from './store';
 
-import {SongsModule} from "./songs/songs.module";
+import {SongsModule} from './songs/songs.module';
 import {AppComponent} from './app.component';
 
 @NgModule({

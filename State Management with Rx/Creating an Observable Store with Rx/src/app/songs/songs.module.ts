@@ -6,6 +6,8 @@ import {SongsFavouritesComponent} from './components/songs-favourites/songs-favo
 import {SongsListenedComponent} from './components/songs-listened/songs-listened.component';
 import {SongsPlaylistComponent} from './components/songs-playlist/songs-playlist.component';
 
+import {SongsService} from './services/songs.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +22,9 @@ import {SongsPlaylistComponent} from './components/songs-playlist/songs-playlist
     SongsFavouritesComponent,
     SongsListenedComponent,
     SongsPlaylistComponent
+  ],
+  providers: [
+    SongsService
   ]
 })
 export class SongsModule {}

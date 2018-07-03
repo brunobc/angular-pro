@@ -1,18 +1,32 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import {Store} from '../../../store';
+import {Observable} from 'rxjs/Observable';
+
+import {SongsService} from '@app/songs/services/songs.service';
+
+import {Store} from '@app/store';
 
 @Component({
-  selector: 'songs-favourites',
+  selector: 'app-songs-favourites',
   template: `
-    <div class="songs">
-      <h6>Favourites</h6>
-    </div>
-  `
+  <div class="songs">
+    <div *ngFor="let item of favourites$ | async">
+      {{ item.artist }}
+      {{ item.track }}
+    <div>
+  </div>`
 })
-export class SongsFavouritesComponent {
+export class SongsFavouritesComponent  implements OnInit {
+
+  favourites$: Observable<any[]>;
 
   constructor(
-    private store: Store
+    private store: Store,
+    private songsService: SongsService
   ) {}
+
+  ngOnInit() {
+    this.favourites$ = this.store.select('playlist');
+  }
+
 }

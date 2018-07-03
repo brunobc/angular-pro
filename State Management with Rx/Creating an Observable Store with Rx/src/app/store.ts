@@ -22,11 +22,8 @@ export class Store {
     return this.store.pluck(name);
   }
 
-  set(name: string, state: any) {
-    this.subject.next({
-      ...this.value,
-      [name]: state
-    });
+  set(name: string, st: any) {
+    this.subject.next({...this.value, [name]: st});
   }
 
 }
