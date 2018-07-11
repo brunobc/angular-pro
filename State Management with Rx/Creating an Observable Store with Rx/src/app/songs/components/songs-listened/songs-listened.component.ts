@@ -12,10 +12,10 @@ import {Store} from '@app/store';
   selector: 'app-songs-listened',
   template: `
   <div class="songs">
-    <div *ngFor="let item of listened$ | async">
-      {{ item.artist }}
-      {{ item.track }}
-    <div>
+    <app-songs-list
+      [list]="listened$ | async">
+      Played
+    </app-songs-list>
   </div>`
 })
 export class SongsListenedComponent implements OnInit {

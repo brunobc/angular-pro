@@ -5,11 +5,19 @@ import {Store} from '@app/store';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { Observable } from 'rxjs/Observable';
+
+export interface Song {
+  id: number;
+  name: string;
+  listened: boolean;
+  favourite: boolean;
+}
 
 @Injectable()
 export class SongsService {
 
-  getPlaylist$ = this.http
+  getPlaylist$: Observable<Song[]> = this.http
     .get('http://localhost:4000/playlist')
     .map(res => res.json())
     .do(next => this.store.set('playlist', next));

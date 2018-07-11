@@ -10,10 +10,10 @@ import {Subscription} from 'rxjs/Subscription';
   selector: 'app-songs-playlist',
   template: `
     <div class="songs">
-      <div *ngFor="let item of playlist$ | async">
-        {{ item.artist }}
-        {{ item.track }}
-      <div>
+      <app-songs-list
+        [list]="playlist$ | async">
+        Playlist
+      </app-songs-list>
     </div>`
 })
 export class SongsPlaylistComponent implements OnInit, OnDestroy {
