@@ -9,7 +9,8 @@ import { Observable } from 'rxjs/Observable';
 
 export interface Song {
   id: number;
-  name: string;
+  artist: string;
+  track: string;
   listened: boolean;
   favourite: boolean;
 }
@@ -26,4 +27,13 @@ export class SongsService {
     private http: Http,
     private store: Store
   ) {}
+
+  toggle(event: any) {
+    this.http
+      .put(`http://localhost:4000/playlist/${event.track.id}`, event.track)
+      .map(res => res.json())
+      .subscribe((track: Song) => {
+        console.log(track);
+      });
+  }
 }

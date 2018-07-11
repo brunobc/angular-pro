@@ -13,7 +13,8 @@ import {Store} from '@app/store';
   template: `
   <div class="songs">
     <app-songs-list
-      [list]="listened$ | async">
+      [list]="listened$ | async"
+      (toggle)="onToggle($event)">
       Played
     </app-songs-list>
   </div>`
@@ -31,6 +32,10 @@ export class SongsListenedComponent implements OnInit {
     this.listened$ = this.store.select('playlist')
     .filter(Boolean)
     .map(playlist => playlist.filter(track => track.listened));
+  }
+
+  onToggle(event) {
+    this.songsService.toggle(event);
   }
 
 }
