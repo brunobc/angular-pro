@@ -12,6 +12,16 @@ import { Store } from './store';
       <!--<h6 mat-line>{{ todo.name }}</h6>-->
     <!--</mat-list-item>-->
   <!--</mat-list>-->
+  <div>
+    <label>
+    Credit Card Number
+    <input
+      name="credit-card"
+      type="text"
+      placeholder="Enter your 16-digit card number"
+      credit-card>
+    </label>
+  </div>
   <div credit-card>
     <app-songs-playlist></app-songs-playlist>
     <app-songs-listened></app-songs-listened>
