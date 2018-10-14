@@ -10,11 +10,13 @@ import {Store} from './store';
 import {SongsModule} from './songs/songs.module';
 import {AppComponent} from './app.component';
 import { CreditCardDirective } from "@app/credit-card/credit-card.directive";
+import { TooltipDirective } from "@app/tooltip/tooltip.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreditCardDirective
+    CreditCardDirective,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
